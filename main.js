@@ -1,10 +1,14 @@
 const text = document.querySelector('.fancy');
+text.textContent =
+  "Elon Musk has failed us, A.I attempts to destroy humanity...\n\tMankind's last hope is You!!! Rage against the Machine in a battle to the Death!!!\n\tFirst to 5 wins the war....";
 const stringText = text.textContent;
 const splitText = stringText.split('');
 text.textContent = '';
 for (let i = 0; i < splitText.length; i++) {
   text.innerHTML += '<span>' + splitText[i] + '</span>';
 }
+
+//Need to learn about setIntervals first don't really understand it yet
 let char = 0;
 let timer = setInterval(onTick, 50);
 function onTick() {
