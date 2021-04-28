@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  box-shadow: inset 0px 20px 60px #e61d8c;
+  width: 100vw;
+}
+body {
+  min-height: 100vh;
+  /* width: 99%; */
+  animation: bg-fade 20s 50ms infinite alternate;
+  transition: background-image ease-in-out 200ms;
+  -moz-transition: background-image ease 200ms;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-family: 'Audiowide', cursive;
+}
+.heading {
+  font-size: 5em;
+}
+.blood {
+  font-family: 'Audiowide', cursive;
+  color: #ff0000;
+  font-size: 5em;
+  transition: all 0.25s ease;
+  -webkit-text-stroke: 0.1px rgba(246, 186, 74, 1);
+  animation: drip 2.5s infinite alternate;
+}
+
+@keyframes drip {
+  to {
+    text-shadow: 4px 4px 1px #300000, 4px 6px 1px #400000, 4px 8px 1px #500000,
+      4px 10px 1px #600000, 4px 12px 1px #700000, 4px 14px 1px #800000,
+      4px 16px 1px #900000, 4px 18px 1px #a00000, 4px 20px 1px #b00000,
+      4px 22px 1px #c00000, 4px 24px 1px #d00000, 4px 26px 1px #e00000,
+      4px 28px 1px #f00000, 4px 30px 1px #fa0000, 4px 32px 1px #fb0000,
+      4px 34px 1px #fc0000, 4px 36px 1px #fd0000, 4px 38px 1px #fe0000,
+      4px 40px 2px #ff0000;
+  }
+}
+
+h1 {
+  color: white;
+  text-shadow: 3px 3px 1px #e61d8c;
+  text-align: center;
+  margin: 10px 0;
+}
+span {
+  opacity: 0;
+  transition: all 1s ease;
+}
+.hidetwo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: -9999px;
+}
+iframe {
+  width: 50vw;
+  min-width: 200px;
+  height: 55vh;
+  min-height: 400px;
+}
+a {
+  text-decoration: none;
+  color: white;
+  text-shadow: 3px 3px 1px #e61d8c;
+  font-size: 2em;
+}
+#hide {
+  width: 70%;
+}
+.fade {
+  opacity: 1;
+}
+.fadetwo {
+  opacity: 0;
+  transition: opacity ease-in 1s;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 55%;
+}
+.score-container {
+  display: flex;
+  flex-direction: row;
+  /* align-items:;
+  justify-content: space-evenly; */
+  /* justify-content: space-between; */
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.score-container h1 {
+  margin: 30px 0px;
+  color: gold;
+  text-shadow: 3px 3px 5px #949494;
+  text-align: center;
+}
+@media (max-width: 597px) {
+  .score-container {
+    justify-content: space-around;
+  }
+}
+.weapon {
+  /* opacity: 0;
+  transition: opacity ease-in 1s; */
+  font-size: 1.5em;
+  padding: 10px;
+  background-color: rgba(255, 215, 0, 0.9);
+  border: none;
+  color: white;
+  font-family: 'Audiowide';
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  /* width: 60%; */
+  justify-content: space-around;
+  /* opacity: 0;
+  transition: opacity ease-in 1s; */
+  margin-top: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.choices {
+  height: 200px;
+  width: 200px;
+  background-color: #76a8a6;
+  box-shadow: 0px 2px 20px gold;
+  margin: 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5em;
+  color: white;
+  font-family: 'Audiowide';
+  border: none;
+}
+#play-audio {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  color: white;
+  font-size: 1.5em;
+  align-self: flex-end;
+}
+#play-audio img {
+  height: 75px;
+  width: 75px;
+  margin: 0px 20px;
+  /* border: 1px solid transparent; */
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 60px gold;
+}
+@keyframes bg-fade {
+  from {
+    background-image: url('./Robo-img1/neon\-look1.jpg');
+  }
+  55% {
+    background-image: url('./Robo-img1/neon-look2.jpg');
+  }
+  to {
+    background-image: url('./Robo-img1/robo-bg8.jpg');
+  }
+}
+@media (max-width: 415px) {
+  #play-audio {
+    align-self: center;
+    margin: 30px 0;
+  }
+  html {
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    min-width: 415px;
+  }
+  .heading,
+  .blood {
+    font-size: 3.5em;
+  }
+  h1 {
+    font-size: 1.5em;
+  }
+  .choices {
+    height: 50px;
+    font-size: 2em;
+  }
+  .weapon {
+    font-size: 1em;
+  }
+  .score-container h1 {
+    margin: 30px 20px;
+  }
+}
