@@ -1,5 +1,3 @@
-// const hide = document.querySelector('#hide');
-// const fade = document.querySelector('.weapon, .container');
 const text = document.querySelector('.fancy');
 const stringText = text.textContent;
 const splitText = stringText.split('');
@@ -125,7 +123,6 @@ function youWon() {
   bg.style.animation = 'none';
   hidetwo.style.position = 'static';
   h.style.boxShadow = 'inset 0px 20px 60px gold';
-  // bg.style.backgroundImage = "url('./Robo-img1/hope.gif')";
 }
 var mySong = document.getElementById('mySong');
 var icon = document.getElementById('icon');
@@ -146,14 +143,14 @@ function youLost() {
   const heading = document.querySelector('.heading');
   const h = document.querySelector('html');
   const blood = document.querySelector('.blood');
-  const song = document.querySelector('.play-audio');
+  const song = document.querySelector('#play-audio');
   fadetwo.style.position = 'absolute';
   fadetwo.style.left = '-9999px';
   heading.style.position = 'absolute';
   heading.style.left = '-9999px';
   bg.style.animation = 'none';
   h.style.boxShadow = 'inset 0px 20px 60px #fc0000';
-  blood.innerHTML = 'You Died';
+  blood.innerHTML = 'Game Over';
   song.style.position = 'absolute';
   song.style.left = '-9999px';
 }
