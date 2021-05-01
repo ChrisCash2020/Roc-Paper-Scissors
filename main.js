@@ -1,6 +1,5 @@
 const text = document.querySelector('.fancy');
-text.textContent =
-  "Elon Musk has failed us, A.I attempts to destroy humanity...\n\tMankind's last hope is You!!! Rage against the Machine in a battle to the Death!!!\n\tFirst to 5 wins the war....";
+
 const stringText = text.textContent;
 const splitText = stringText.split('');
 text.textContent = '';
@@ -25,8 +24,10 @@ function complete() {
   const fade = document.querySelector('.fadetwo');
   clearInterval(timer);
   timer = null;
-  hide.style.position = 'absolute';
-  hide.style.left = '-9999px';
+  hide.style.transform = 'scale(0)';
+  hide.style.transition = 'transform ease-out 50ms';
+  hide.style.opacity = '0';
+  hide.style.height = '0';
   fade.style.opacity = '1';
 }
 
@@ -34,9 +35,9 @@ let userChosen;
 let computerChosen;
 let pScore = 0;
 let cScore = 0;
-var result = results();
+// var result = results();
 const displayResult = document.getElementById('result');
-// const randomNumber = Math.floor(Math.random() * 3);
+
 const possibleChoices = document.querySelectorAll('.choices');
 
 possibleChoices.forEach((possibleChoices) =>
@@ -71,7 +72,7 @@ const updateScore = () => {
   }
 };
 
-function results() {
+let results = () => {
   if (userChosen === 'rock' && computerChosen === 'paper') {
     result = 'You Lost';
     cScore++;
@@ -112,7 +113,8 @@ function results() {
     updateScore();
     return;
   }
-}
+};
+var result = results();
 
 function youWon() {
   const bg = document.querySelector('body');
@@ -125,7 +127,9 @@ function youWon() {
   heading.innerHTML = 'Congrats';
   heading.style.textShadow = '3px 3px 1px #949494';
   bg.style.animation = 'none';
-  hidetwo.style.position = 'static';
+  hidetwo.style.height = '55vh';
+  hidetwo.style.minHeight = '400px';
+  hidetwo.style.transform = 'scale(1)';
   h.style.boxShadow = 'inset 0px 20px 60px gold';
 }
 var mySong = document.getElementById('mySong');
@@ -147,7 +151,7 @@ function youLost() {
   const heading = document.querySelector('.heading');
   const h = document.querySelector('html');
   const blood = document.querySelector('.blood');
-  const song = document.querySelector('#play-audio');
+  const song = document.querySelector('#icon');
   fadetwo.style.position = 'absolute';
   fadetwo.style.left = '-9999px';
   heading.style.position = 'absolute';
@@ -155,6 +159,5 @@ function youLost() {
   bg.style.animation = 'none';
   h.style.boxShadow = 'inset 0px 20px 60px #fc0000';
   blood.innerHTML = 'Game Over';
-  song.style.position = 'absolute';
-  song.style.left = '-9999px';
+  song.style.boxShadow = 'inset 0px 0px 60px #ff0000';
 }

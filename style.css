@@ -7,11 +7,16 @@ html {
   box-shadow: inset 0px 20px 60px #e61d8c;
   width: 100vw;
 }
+div.preload-images {
+  background: url('./Robo-img1/neon\-look1.jpg') no-repeat -9999px -9999px;
+  background: url('./Robo-img1/neon-look2.jpg') no-repeat -9999px -9999px,
+    url('./Robo-img1/robo-bg8.jpg') no-repeat -9999px -9999px;
+}
 body {
   min-height: 100vh;
   animation: bg-fade 20s 50ms infinite alternate;
   transition: background-image ease-in-out 200ms;
-  -moz-transition: background-image ease 200ms;
+  -moz-transition: background-image ease-in-out 200ms;
   background-color: black;
   display: flex;
   flex-direction: column;
@@ -54,23 +59,21 @@ h1 {
 }
 span {
   opacity: 0;
-  transition: all 1s ease;
+  transition: opacity 1.5s ease;
+  transition-delay: 300ms;
 }
 .hidetwo {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  left: -9999px;
+  transform: scale(0);
+  transition: transform ease-out 20ms;
 }
 iframe {
   width: 50vw;
   min-width: 200px;
-  height: 55vh;
-  min-height: 400px;
-  padding: 0 auto;
-  margin: 0 auto;
+  height: 0;
 }
 a {
   text-decoration: none;
@@ -99,6 +102,10 @@ a {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  cursor: pointer;
+}
+#result {
+  cursor: pointer;
 }
 .score-container h1 {
   margin: 30px 0px;
@@ -140,9 +147,10 @@ a {
   color: white;
   font-family: 'Audiowide';
   border: none;
+  cursor: pointer;
 }
 .choices:hover {
-  transform: scale(1.1);
+  transform: scale(1.12);
   transition: transform ease 200ms;
   box-shadow: 0px 2px 40px gold;
 }
@@ -161,6 +169,7 @@ a {
   margin: 0px 20px;
   border-radius: 50%;
   box-shadow: inset 0px 0px 60px gold;
+  cursor: pointer;
 }
 #play-audio img:hover {
   box-shadow: inset 0px 0px 60px #e61d8c;
